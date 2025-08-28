@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #map {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .popup-big .leaflet-popup-content {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .popup-big .leaflet-popup-content-wrapper {
+      padding: 16px 20px;
+      border-radius: 10px;
+    }
+
+    .popup-big .leaflet-popup-tip {
+      width: 14px;
+      height: 14px;
+    }
+
+    .leaflet-tooltip.tooltip-big {
+      font-size: 16px;
+      padding: 6px 10px;
+    }
+
+    @media (max-width: 600px) {
+      .popup-big .leaflet-popup-content {
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const w = 3840, h = 2160;
+    const bounds = [[0, 0], [h, w]];
+
+    const map = L.map('map', {
+      crs: L.CRS.Simple,
+      zoomControl: false,
+      dragging: true,
+      scrollWheelZoom: true,
+      doubleClickZoom: true,
+      touchZoom: true,
+      minZoom: -4,
+      maxZoom: 4
+    });
+
+    L.imageOverlay('oklyon.png', bounds).addTo(map);
+
+    map.fitBounds(bounds);
+
+    map.setMaxBounds(bounds);
+    map.options.maxBoundsViscosity = 0.8;
+
+    L.marker([1577, 1454]).addTo(map)
+      .bindTooltip('Karczma "Pod Piracką Zęzą"', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1093, 2364]).addTo(map)
+      .bindTooltip('Świątynia Trastigosa Świetlistego', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([897, 2503.5]).addTo(map)
+      .bindTooltip('Ruiny teatru', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([986.5, 2212.25]).addTo(map)
+      .bindTooltip('Nowa Akademia Oklyońska', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1759, 860]).addTo(map)
+      .bindTooltip('Stocznia', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1502, 879]).addTo(map)
+      .bindTooltip('Port Handlowy', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1906, 2127]).addTo(map)
+      .bindTooltip('Port Wojenny', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([2029, 2376]).addTo(map)
+      .bindTooltip('Twierdza Morska', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([800, 1369]).addTo(map)
+      .bindTooltip('Świątynia Gotrel', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1417, 1597]).addTo(map)
+      .bindTooltip('Magazyny Gildii', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1313, 1639]).addTo(map)
+      .bindTooltip('Kuźnia Jorbaga', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1012, 2799]).addTo(map)
+      .bindTooltip('Agora', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([733, 3245]).addTo(map)
+      .bindTooltip('Świątynia Livo', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([887, 2025]).addTo(map)
+      .bindTooltip('Świątynia Horkosa', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([953.5, 2185.25]).addTo(map)
+      .bindTooltip('Biblioteka Oklyońska', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1291, 2776]).addTo(map)
+      .bindTooltip('Herozjon Iseasa', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1482, 2526]).addTo(map)
+      .bindTooltip('Twierdza Miejska/Skarbiec', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([510, 1629]).addTo(map)
+      .bindTooltip('Koszary Południowe', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1287, 1941]).addTo(map)
+      .bindTooltip('Główne koszary miejskie', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1758, 967.5]).addTo(map)
+      .bindTooltip('Kuźnia Olberga', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1337.5, 2126.5]).addTo(map)
+      .bindTooltip('Beleuterion', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([939, 2856]).addTo(map)
+      .bindTooltip('Dikasterion', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1189, 2971.5]).addTo(map)
+      .bindTooltip('Łaźnie publiczne', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1803, 1235]).addTo(map)
+      .bindTooltip('Karczma "Łeb Hydry"', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([701, 1959]).addTo(map)
+      .bindTooltip('Karczma "Pod Urwanym Żaglem"', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([503, 2447]).addTo(map)
+      .bindTooltip('Gospoda "Spokojne Wody"', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+
+    L.marker([674, 3261]).addTo(map)
+      .bindTooltip('Gospoda "Sen Livo"', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1195, 2682]).addTo(map)
+      .bindTooltip('Arena Miejska', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1024, 3440]).addTo(map)
+      .bindTooltip('Pozostałości po klątwie', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([454, 3275]).addTo(map)
+      .bindTooltip('Koszary Zachodnie', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([305, 3723]).addTo(map)
+      .bindTooltip('Nekropolia', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+
+    L.marker([221, 2966]).addTo(map)
+      .bindTooltip('Hipodrom', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([506, 1476]).addTo(map)
+      .bindTooltip('Gospoda "Pod Łabędzim Skrzydłem"', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([705, 1215]).addTo(map)
+      .bindTooltip('Plac Targowy', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1066, 1321]).addTo(map)
+      .bindTooltip('Dykterion Meiry', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([830, 2918]).addTo(map)
+      .bindTooltip('Dykterion Arasny', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1324, 2247]).addTo(map)
+      .bindTooltip('Trastigonejon miejski', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([742, 2338]).addTo(map)
+      .bindTooltip('Dzielnica Arystokratów', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1273, 1772]).addTo(map)
+      .bindTooltip('I Bank Oklyoński', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([140, 1700]).addTo(map)
+      .bindTooltip('Arena Ostrakońska', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1235, 1642]).addTo(map)
+      .bindTooltip('Płatnerz Omari', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([902, 1583]).addTo(map)
+      .bindTooltip('Pyrravyn - Alchemik', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1961, 597]).addTo(map)
+      .bindTooltip('Kartograf Gorgias', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([1126, 1738]).addTo(map)
+      .bindTooltip('Łuczarz Pylades', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([506, 2269]).addTo(map)
+      .bindTooltip('Handlarz Wierzchowców', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+    L.marker([599, 2859]).addTo(map)
+      .bindTooltip('Sklep - Biblioteka Mnemosyne', {
+        permanent: false, direction: 'top', offset: [0, 0], className: 'tooltip-small'
+      })
+
+  </script>
+</body>
+
+</html>
